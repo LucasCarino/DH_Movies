@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('../partials/head') %>
+
+<body>
+    <%- include('../partials/header') %>
+    <main>
+        <h2>Películas recomendadas</h2>
+        <section>
+            <% movies.forEach(movie => { %>
+            <a href="/movies/detail/<%= movie.id %>">
+                <article class="movie__article">
+                    <img src="/images/cinema-time-standard.jpg" alt="image" class="navicon">
+                    <p><%= movie.title %></p>
+                </article>
+            </a>
+            <% }) %>
+        </section>
+    </main>
+</body>
+
+</html>

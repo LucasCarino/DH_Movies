@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('../partials/head') %>
+
+<body>
+    <%- include('../partials/header') %>
+    <main>
+
+        <body>
+            <h2><%= movie.title %></h2>
+            <section class="movie__detail">
+                <img src="/images/cinema-time-standard.jpg" alt="image" class="navicon">
+                <article>
+                    <p>Rating: <%= movie.rating%></p>
+                    <p>Premios: <%= movie.awards%></p>
+                    <p>Duracion: <%= movie.length%> Minutos</p>
+                    <p>Fecha de estreno: <%= movie.release_date.toLocaleString("es-AR",{ dateStyle: "short"}); %></p>
+                    <% if (movie.Genres) { %>
+                    <p>Genero: <%= movie.Genres.name %></p>
+                    <% } %>
+                    <div class="detail__buttons">
+                        <form action="/movies/delete/<%= movie.id %>/?_method=DELETE" method="POST">
+                            <button type="submit">BORRAR</button>
+                        </form>
+                        <a href="/movies/edit/<%= movie.id %>"><button>MODIFICAR</button></a>
+                    </div>
+                </article>
+            </section>
+        </body>
+    </main>
+
+</html>

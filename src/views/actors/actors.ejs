@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('../partials/head') %>
+
+<body>
+    <%- include('../partials/header') %>
+    <main>
+        <h2>Actores</h2>
+        <section>
+            <% actors.forEach(actor => { %>
+            <a href="/actors/detail/<%= actor.id %>">
+                <article class="movie__article">
+                    <img src="/images/cinema-time-profile-picture.jpg" alt="image" class="navicon">
+                    <p><%= actor.first_name + ' ' + actor.last_name %></p>
+                </article>
+            </a>
+            <% }) %>
+        </section>
+    </main>
+</body>
+
+</html>

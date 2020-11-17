@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('../partials/head') %>
+
+<body>
+    <%- include('../partials/header') %>
+    <main>
+
+        <body>
+            <h2><%= actor.first_name + ' ' + actor.last_name %></h2>
+            <section class="movie__detail">
+                <img src="/images/cinema-time-profile-picture.jpg" alt="image" class="navicon">
+                <article>
+                    <p>Rating: <%= actor.rating%></p>
+                    <% if (actor.favoriteMovie) { %>
+                    <p>Película favorita: <%= actor.favoriteMovie.title %></p>
+                    <% } %>
+                    <div class="detail__buttons">
+                        <form action="/movies/delete/<%= actor.id %>/?_method=DELETE" method="POST">
+                            <button type="submit">BORRAR</button>
+                        </form>
+                    </div>
+                </article>
+            </section>
+        </body>
+    </main>
+
+</html>
