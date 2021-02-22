@@ -1,7 +1,7 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": null,
+    "password": "root",
     "database": "movies_db",
     "host": "127.0.0.1",
     "dialect": "mysql",
@@ -18,10 +18,14 @@ module.exports = {
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "uutamukdd5wax2eb",
+    "password": "Dbzv6u7CMlnHCazglUs9",
+    "database": "bsa0lz63awqn1j6hcwnt",
+    "host": "bsa0lz63awqn1j6hcwnt-mysql.services.clever-cloud.com",
+    "dialect": "mysql",
+    define: {
+      underscored: true,
+      paranoid: true
+    }
   }
 }
